@@ -19,7 +19,7 @@ PALETTE     = [PRIMARY, SECONDARY, ACCENT, SUCCESS, DANGER,
 # ─── Page Config ─────────────────────────────────────────────────────────────
 def set_page_config(title: str, icon: str):
     st.set_page_config(
-        page_title=f"RetailPulse | {title}",
+        page_title=f"RetailPulse: AI-Powered Retail Analytics | {title}",
         page_icon=icon,
         layout="wide",
         initial_sidebar_state="expanded",
@@ -44,7 +44,7 @@ def inject_css():
     section[data-testid="stSidebar"] .stSelectbox label,
     section[data-testid="stSidebar"] .stMultiSelect label { color: #94A3B8 !important; font-size: 0.78rem !important; }
 
-    /* Main background */
+   
     /* Main background */
 .main {
     background: #0D0D1A;
@@ -81,7 +81,7 @@ def inject_css():
         margin: 1.5rem 0 0.8rem 0;
     }
 
-    /* Page title */
+    
     /* Page title */
 .page-title {
     font-size: 2rem;

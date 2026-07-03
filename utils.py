@@ -45,8 +45,19 @@ def inject_css():
     section[data-testid="stSidebar"] .stMultiSelect label { color: #94A3B8 !important; font-size: 0.78rem !important; }
 
     /* Main background */
-    .main { background: #0D0D1A; }
-    .block-container { padding: 1.5rem 2rem 2rem 2rem !important; }
+    /* Main background */
+.main {
+    background: #0D0D1A;
+}
+
+/* Main page spacing */
+.block-container {
+    max-width: 100%;
+    padding-top: 4.5rem !important;
+    padding-right: 2.5rem !important;
+    padding-left: 2.5rem !important;
+    padding-bottom: 2rem !important;
+}
 
     /* Metric cards */
     .metric-card {
@@ -71,12 +82,22 @@ def inject_css():
     }
 
     /* Page title */
-    .page-title {
-        font-size: 1.7rem; font-weight: 800; color: #E2E8F0;
-        margin-bottom: 0.2rem;
-    }
-    .page-subtitle { font-size: 0.85rem; color: #64748B; margin-bottom: 1.2rem; }
+    /* Page title */
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #E2E8F0;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-top: 0.2rem;
+    margin-bottom: 0.35rem;
+}
 
+.page-subtitle {
+    font-size: 0.95rem;
+    color: #94A3B8;
+    margin-bottom: 1.5rem;
+}
     /* Plotly chart backgrounds */
     .js-plotly-plot .plotly { background: transparent !important; }
 
@@ -98,6 +119,23 @@ def inject_css():
     }
     div[data-testid="metric-container"] label { color: #94A3B8 !important; font-size: 0.75rem !important; }
     div[data-testid="metric-container"] div[data-testid="stMetricValue"] { color: #E2E8F0 !important; font-weight: 800 !important; }
+                /* Hide Streamlit Header */
+header[data-testid="stHeader"] {
+    background: transparent;
+    height: 0;
+}
+
+div[data-testid="stToolbar"] {
+    display: none;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
     </style>
     """, unsafe_allow_html=True)
 
@@ -168,5 +206,27 @@ def section_header(text: str):
     st.markdown(f'<div class="section-header">{text}</div>', unsafe_allow_html=True)
 
 def page_header(title: str, subtitle: str):
-    st.markdown(f'<div class="page-title">{title}</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="page-subtitle">{subtitle}</div>', unsafe_allow_html=True)
+    st.markdown(
+        """
+        <div style="padding-top:18px;"></div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        f"""
+        <div class="page-title">
+            {title}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        f"""
+        <div class="page-subtitle">
+            {subtitle}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )

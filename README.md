@@ -184,15 +184,20 @@ Live Application:
 
 ---
 
+
 # 📸 Dashboard Preview
 
-_Add screenshots of:_
+## Executive Summary Dashboard
+![Executive Dashboard](Screenshots/Executive.png)
 
-- Executive Dashboard
-- Customer Churn Prediction
-- Revenue Forecasting
-- Customer Analytics
+## Customer Analytics
+![Customer Analytics](Screenshots/Customer_analytics.png)
 
+## Customer Churn Prediction
+![Customer Churn](Screenshots/customer_churn.png)
+
+## Revenue Forecasting
+![Revenue Forecast](Screenshots/Revenue_Forecast.png)
 ---
 
 
